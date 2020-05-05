@@ -1,0 +1,25 @@
+.nav {
+    grid-area: nav;
+    background-color: #bbdbed;
+    padding: 25px;
+}
+
+
+.ul {
+    list-style-type: none;
+
+}
+
+.ul li {
+    margin-bottom: 10px
+}
+
+.link {
+    text-decoration: none;
+    color: #fff;
+
+}
+
+.active {
+    color: #fc82c5;
+}
