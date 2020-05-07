@@ -21,6 +21,24 @@ const state = {
       { id: 5, message: "Yo yo yo" },
     ],
   },
+  sidebar: {
+    friends: [
+      { id: 1, name: "Andrew" },
+      { id: 2, name: "Sasha" },
+      { id: 3, name: "Anna" },
+    ],
+  },
+};
+
+export const addPost = (postMessage) => {
+  debugger;
+  const newPost = {
+    id: 5,
+    message: postMessage,
+    likesCount: 0,
+  };
+
+  state.profilePage.posts.push(newPost);
 };
 
 export default state;
