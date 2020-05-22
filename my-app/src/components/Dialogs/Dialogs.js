@@ -5,11 +5,11 @@ import MessageItem from "./MessageItem/MessageItem";
 
 const Dialogs = (props) => {
   const dialogsElements = props.dialogs.map((d) => (
-    <DialogItem name={d.name} id={d.id} />
+    <DialogItem name={d.name} id={d.id} key={d.id} />
   ));
 
   const messagesElements = props.messages.map((m) => (
-    <MessageItem message={m.message} />
+    <MessageItem message={m.message} key={m.id} />
   ));
 
   const onSendMessageClick = () => {
