@@ -1,5 +1,5 @@
 import React from "react";
-import avatar from "../../../img/ava_dialogs.jpg";
+import avatar from "../../../assets/img/ava_dialogs.jpg";
 import style from "./Friends.module.css";
 
 const Friends = (props) => {
