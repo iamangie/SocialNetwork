@@ -2,3 +2,7 @@
     width: 80px;
     border-radius: 50%;
 }
+
+.selectedPage {
+    font-weight: bold;
+}
