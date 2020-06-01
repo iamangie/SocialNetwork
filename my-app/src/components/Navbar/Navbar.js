@@ -22,6 +22,15 @@ const Navbar = (props) => {
         </li>
         <li>
           <NavLink
+            to="/users"
+            className={style.link}
+            activeClassName={style.active}
+          >
+            Users
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
             to="/dialogs"
             className={style.link}
             activeClassName={style.active}
@@ -54,15 +63,6 @@ const Navbar = (props) => {
             activeClassName={style.active}
           >
             Settings
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            to="/users"
-            className={style.link}
-            activeClassName={style.active}
-          >
-            Users
           </NavLink>
         </li>
       </ul>
