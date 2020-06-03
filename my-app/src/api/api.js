@@ -16,19 +16,23 @@ export const usersAPI = {
   },
 };
 
-export const authAPI = {
-  authUser() {
-    return instance.get(`/auth/me`).then((response) => response.data);
+export const followAPI = {
+  unfollowUser(userId) {
+    return instance.delete(`/follow/${userId}`);
+  },
+  followUser(userId) {
+    return instance.post(`/follow/${userId}`);
   },
 };
 
-export const followAPI = {
-  unfollowUser(userId) {
-    return instance
-      .delete(`/follow/${userId}`)
-      .then((response) => response.data);
+export const authAPI = {
+  authMe() {
+    return instance.get(`/auth/me`);
   },
-  followUser(userId) {
-    return instance.post(`/follow/${userId}`).then((response) => response.data);
+};
+
+export const profileAPI = {
+  getProfile(userId) {
+    return instance.get(`/profile/` + userId);
   },
 };
