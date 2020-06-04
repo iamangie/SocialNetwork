@@ -9,7 +9,7 @@ const mapStateToPropsForRedirect = (state) => ({
 export const withAuthRedirect = (Component) => {
   const RedirectComponent = (props) => {
     if (!props.isAuth) return <Redirect to={"/login"} />;
-    return <Component {...this.props} />;
+    return <Component {...props} />;
   };
 
   let ConnectedRedirectComponent = connect(mapStateToPropsForRedirect)(

@@ -2,6 +2,7 @@ import React from "react";
 import style from "./ProfileInfo.module.css";
 import background from "../../../assets/img/background.jpg";
 import Preloader from "../../common/Preloader/Preloader";
+import ProfileStatus from "./ProfileStatus";
 
 const ProfileInfo = (props) => {
   if (!props.profile) {
@@ -16,18 +17,7 @@ const ProfileInfo = (props) => {
 
       <div className={style.descriptionBlock}>
         <img src={props.profile.photos.large} alt="userPhoto" />
-        <div>
-          Twitter:
-          {props.profile.contacts.twitter
-            ? props.profile.contacts.twitter
-            : " I don't have it"}
-        </div>
-        <div>
-          Status:
-          {props.profile.lookingForAJob
-            ? props.profile.lookingForAJobDescription
-            : " nothing to say"}
-        </div>
+        <ProfileStatus status="Hello!" />
       </div>
     </div>
   );
