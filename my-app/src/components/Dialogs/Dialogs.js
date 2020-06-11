@@ -2,6 +2,7 @@ import React from "react";
 import style from "./Dialogs.module.css";
 import DialogItem from "./DialogItem/DialogItem";
 import MessageItem from "./MessageItem/MessageItem";
+import AddMessageReduxForm from "./AddMessageForm";
 
 const Dialogs = (props) => {
   const dialogsElements = props.dialogs.map((d) => (
@@ -12,13 +13,8 @@ const Dialogs = (props) => {
     <MessageItem message={m.message} key={m.id} />
   ));
 
-  const onSendMessageClick = () => {
-    props.sendMessage();
-  };
-
-  const onNewMessageChange = (event) => {
-    let text = event.target.value;
-    props.updateNewMessageText(text);
+  const addNewMessage = (values) => {
+    props.sendMessage(values.newMessageText);
   };
 
   return (
@@ -26,16 +22,7 @@ const Dialogs = (props) => {
       <div className={style.dialogsItems}>{dialogsElements}</div>
       <div className={style.messagesItems}>
         <div>{messagesElements}</div>
-        <div>
-          <textarea
-            placeholder="Enter your message"
-            value={props.newMessageText}
-            onChange={onNewMessageChange}
-          ></textarea>
-        </div>
-        <div>
-          <button onClick={onSendMessageClick}>Send</button>
-        </div>
+        <AddMessageReduxForm onSubmit={addNewMessage} />
       </div>
     </div>
   );
