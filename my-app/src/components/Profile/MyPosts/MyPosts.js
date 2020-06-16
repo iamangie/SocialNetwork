@@ -1,7 +1,7 @@
 import React from "react";
 import Post from "./Post/Post";
 import style from "./MyPosts.module.css";
-import AddNewPostForm from "./AddNewPostForm";
+import AddNewPostForm from "./AddNewPostForm/AddNewPostForm";
 
 const MyPosts = (props) => {
   const postsElements = props.posts.map((p) => (

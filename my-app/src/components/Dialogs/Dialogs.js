@@ -2,7 +2,7 @@ import React from "react";
 import style from "./Dialogs.module.css";
 import DialogItem from "./DialogItem/DialogItem";
 import MessageItem from "./MessageItem/MessageItem";
-import AddMessageReduxForm from "./AddMessageForm";
+import AddMessageReduxForm from "./AddMessageForm/AddMessageForm";
 
 const Dialogs = (props) => {
   const dialogsElements = props.dialogs.map((d) => (
