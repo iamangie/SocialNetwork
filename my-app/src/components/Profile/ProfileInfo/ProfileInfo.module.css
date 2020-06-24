@@ -5,3 +5,8 @@
 .descriptionBlock {
     padding: 25px;
 }
+
+.avatar {
+    width: 80px;
+    border-radius: 50%;
+}
