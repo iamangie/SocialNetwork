@@ -1,7 +1,7 @@
 import React from "react";
-import Post from "./Post/Post";
-import style from "./MyPosts.module.css";
 import AddNewPostForm from "./AddNewPostForm/AddNewPostForm";
+import style from "./MyPosts.module.css";
+import Post from "./Post/Post";
 
 const MyPosts = React.memo((props) => {
   console.log("RENDER");

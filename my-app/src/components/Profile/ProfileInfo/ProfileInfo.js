@@ -1,12 +1,12 @@
 import React from "react";
-import style from "./ProfileInfo.module.css";
 import background from "../../../assets/img/background.jpg";
-import Preloader from "../../common/Preloader/Preloader";
-import ProfileStatus from "./ProfileStatus";
 import userPhoto from "../../../assets/img/user.png";
+import Preloader from "../../common/Preloader/Preloader";
+import style from "./ProfileInfo.module.css";
+import ProfileStatus from "./ProfileStatus";
 
-const ProfileInfo = (props) => {
-  if (!props.profile) {
+const ProfileInfo = ({ profile, status, updateUserStatus }) => {
+  if (!profile) {
     return <Preloader />;
   }
 
@@ -18,16 +18,11 @@ const ProfileInfo = (props) => {
 
       <div className={style.descriptionBlock}>
         <img
-          src={
-            props.profile.photos.large ? props.profile.photos.large : userPhoto
-          }
+          src={profile.photos.large ? profile.photos.large : userPhoto}
           className={style.avatar}
           alt="userPhoto"
         />
-        <ProfileStatus
-          status={props.status}
-          updateUserStatus={props.updateUserStatus}
-        />
+        <ProfileStatus status={status} updateUserStatus={updateUserStatus} />
       </div>
     </div>
   );
