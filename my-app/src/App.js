@@ -1,12 +1,10 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { connect, Provider } from "react-redux";
-import { BrowserRouter, Route, withRouter } from "react-router-dom";
+import { BrowserRouter, Route, withRouter, Switch } from "react-router-dom";
 import { compose } from "redux";
 import "./App.css";
 import Preloader from "./components/common/Preloader/Preloader";
-import DialogsContainer from "./components/Dialogs/DialogsContainer";
 import HeaderContainer from "./components/Header/HeaderContainer";
-import Login from "./components/Login/Login";
 import Music from "./components/Music/Music";
 import Navbar from "./components/Navbar/Navbar";
 import News from "./components/News/News";
@@ -15,6 +13,12 @@ import Settings from "./components/Settings/Settings";
 import UsersContainer from "./components/Users/UsersContainer";
 import { initializeApp } from "./redux/appReducer";
 import store from "./redux/reduxStore";
+
+const DialogsContainer = React.lazy(() =>
+  import("./components/Dialogs/DialogsContainer")
+);
+
+const Login = React.lazy(() => import("./components/Login/Login"));
 
 class App extends React.Component {
   componentDidMount() {
@@ -31,12 +35,16 @@ class App extends React.Component {
         <Navbar />
         <div className="app-wrapper-content">
           <Route path="/profile/:userId?" render={() => <ProfileContainer />} />
-          <Route path="/dialogs" render={() => <DialogsContainer />} />
           <Route path="/news" component={News} />
           <Route path="/music" component={Music} />
           <Route path="/settings" component={Settings} />
           <Route path="/users" render={() => <UsersContainer />} />
-          <Route path="/login" render={() => <Login />} />
+          <Suspense fallback={<Preloader />}>
+            <Switch>
+              <Route path="/dialogs" render={() => <DialogsContainer />} />
+              <Route path="/login" render={() => <Login />} />
+            </Switch>
+          </Suspense>
         </div>
       </div>
     );
