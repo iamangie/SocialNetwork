@@ -1,0 +1,1 @@
+{"version":3,"sources":["Dialogs.module.css","DialogItem.module.css"],"names":[],"mappings":"AAAA,wBACI,YAAa,CACb,8BAA+B,CAC/B,YACJ,CCJA,0BACI,UAAW,CACX,iBACJ","file":"3.9b8e43b4.chunk.css","sourcesContent":[".dialogs {\n    display: grid;\n    grid-template-columns: 2fr 10fr;\n    padding: 25px;\n}",".avatar {\n    width: 80px;\n    border-radius: 50%;\n}"]}
