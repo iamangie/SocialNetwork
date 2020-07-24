@@ -8,7 +8,7 @@ const MyPosts = React.memo((props) => {
   console.log(props);
 
   const postsElements = props.posts.map((p) => (
-    <Post message={p.message} like={p.likesCount} id={p.id} />
+    <Post key={p.id} message={p.message} like={p.likesCount} id={p.id} />
   ));
 
   const onAddPost = (values) => {
