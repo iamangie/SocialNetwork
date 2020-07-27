@@ -4,7 +4,7 @@ import { required } from "../../utils/validators/validators";
 import { createField, Input } from "../common/FormsControls/FormsControls";
 import style from "../common/FormsControls/FormsControls.module.css";
 
-const LoginForm = ({ handleSubmit, error }) => {
+const LoginForm = ({ handleSubmit, error, captchaUrl }) => {
   return (
     <form onSubmit={handleSubmit}>
       {createField("Email", "email", Input, [required])}
@@ -36,6 +36,11 @@ const LoginForm = ({ handleSubmit, error }) => {
       )}
       {/* <Field type="checkbox" name="rememberMe" component={Input} />
         remember me */}
+
+      {captchaUrl && <img src={captchaUrl} alt="Anti-bot symbols" />}
+
+      {captchaUrl &&
+        createField("Enter symbols from image", "captcha", Input, [required])}
 
       {error && <div className={style.formGeneralError}>{error}</div>}
       <div>
