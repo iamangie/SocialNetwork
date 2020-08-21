@@ -35,4 +35,6 @@ For now, there are a few things you can do using SocialNetwork:
 * ``` npm install ``` to install its dependencies
 * Once the dependencies are installed, you can run ```npm start``` to start the application
 
+To use and test all SocialNetwork features, you have to login after running this app. Enter the test account data using Login Form: Email: free@samuraijs.com; Password: free
+
 
